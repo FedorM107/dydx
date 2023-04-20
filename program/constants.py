@@ -5,13 +5,16 @@ from decouple import config
 MODE = "DEVELOPMENT"
 
 # Close all open positions and orders
-ABORT_ALL_POSITIONS = False
+ABORT_ALL_POSITIONS = True
 
 # Find Cointegrated Pairs
-FIND_COINTEGRATED = True
+FIND_COINTEGRATED = False
 
-# Decide Trades
-PLACE_TRADES = True
+#Exit Trades
+MANAGE_EXITS = False
+
+# Place Trades
+PLACE_TRADES = False
 
 # Resolution
 RESOLUTION ="1HOUR"
@@ -56,3 +59,6 @@ HOST = API_HOST_MAINNET if MODE == "PRODUCTION" else API_HOST_GOERLI
 HTTP_PROVIDER_MAINNET = "https://eth-mainnet.g.alchemy.com/v2/tzsTp7FoXnz5ZN-WnrD47jqmSZHCjd92"
 HTTP_PROVIDER_TESTNET = "https://eth-goerli.g.alchemy.com/v2/DR1_aPDXURteiECD43L5sFhZwAkX0iol"
 HTTP_PROVIDER = HTTP_PROVIDER_MAINNET if MODE == "PRODUCTION" else HTTP_PROVIDER_TESTNET
+
+#Adjust for token pairs that must adhere to quantity step of 10
+TOKEN_FACTOR_10 = ["XLM-USD","DOGE-USD","TRX-USD"]

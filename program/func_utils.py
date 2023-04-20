@@ -35,6 +35,7 @@ def get_ISO_times():
     date_start_4 = date_start_3 - timedelta(hours=100)
 
     #Format datetimes
+    #This is a nested dictionary
     times_dict = {
         "range_1": {
             "from_iso": format_time(date_start_1),
